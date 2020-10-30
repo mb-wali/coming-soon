@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Repository</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/coming-soon.css') }}">
+
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <div class="bgimg">
+    <div class="topleft">
+      <img src="{{ url_for('static', filename='images/dummy-logo.png') }}" class="rounded mx-auto d-block" width="125"
+      height="100">  
+    </div>
+    <div class="middle">
+      <h1 class="awesome">COMING SOON</h1>
+      <hr>
+      <p class="date"><strong>01-02-2021</strong></p>
+    </div>
+    <div class="bottomleft">
+      <p id="demo" style="font-size:30px"></p>
+    </div>
+  </div>
+
+  
+
+  <script type=text/javascript src="{{url_for('static', filename='js/coming-soon.js') }}"></script>
+</body>
+
+</html>
