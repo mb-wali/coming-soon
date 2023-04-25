@@ -6,12 +6,13 @@ load_dotenv()
 
 
 TOOL_NAME = os.getenv("TOOL_NAME")
+DEADLINE = os.getenv("DEADLINE")
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("coming-soon.html", TOOL_NAME=TOOL_NAME)
+    return render_template("coming-soon.html", TOOL_NAME=TOOL_NAME, DEADLINE=DEADLINE)
 
 @app.errorhandler(404)
 def page_not_found(e):
