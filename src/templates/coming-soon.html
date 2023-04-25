@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Repository</title>
+  <title>{{TOOL_NAME}}</title>
   <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/coming-soon.css') }}">
 
@@ -15,13 +15,17 @@
 
   <div class="bgimg">
     <div class="topleft">
-      <img src="{{ url_for('static', filename='images/dummy-logo.png') }}" class="rounded mx-auto d-block" width="125"
-      height="100">  
+      <img src="{{ url_for('static', filename='images/TU_Graz.png') }}" class="rounded mx-auto d-block" width="125"
+      height="80">  
     </div>
     <div class="middle">
-      <h1 class="awesome">COMING SOON</h1>
+
+      <img src="{{ url_for('static', filename='images/dmptool.png') }}" class="rounded mx-auto d-block"
+      height="90">
+
+      <h1>COMING SOON</h1>
       <hr>
-      <p class="date"><strong>01-02-2021</strong></p>
+      <p class="date"><strong>06-2023</strong></p>
     </div>
     <div class="bottomleft">
       <p id="demo" style="font-size:30px"></p>

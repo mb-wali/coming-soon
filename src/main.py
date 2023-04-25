@@ -1,11 +1,17 @@
 from flask import Flask, render_template
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+
+TOOL_NAME = os.getenv("TOOL_NAME")
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("coming-soon.html")
-
+    return render_template("coming-soon.html", TOOL_NAME=TOOL_NAME)
 
 @app.errorhandler(404)
 def page_not_found(e):
