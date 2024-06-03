@@ -2,17 +2,15 @@
 A sample coming-soon page.
 
 # Pull image
-```docker pull mbwali/coming-soon```
-
-# Build image 
-```bash
-docker build -t coming-soon:latest .
-```
+```docker pull ghcr.io/mb-wali/coming-soon:main```
 
 # Run
 
 ```bash
-docker run --name testing101 -d -e TOOL_NAME="MY New Tool" -e DEADLINE="June 30, 2023" -p 8080:8080 coming-soon:latest  
+docker run --name testing101 -d \
+    -e TOOL_NAME="MY New Tool" \
+    -e DEADLINE="June 30, 2025" \
+    -p 8080:8080 ghcr.io/mb-wali/coming-soon:main  
 ```
 
 Once running, visit http://127.0.0.1:8080 in your browser.
