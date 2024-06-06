@@ -8,12 +8,13 @@ load_dotenv()
 TOOL_NAME = os.getenv("TOOL_NAME", "My Tool")
 DEADLINE = os.getenv("DEADLINE", "June 30, 2025")
 LOGO_NAME = os.getenv("LOGO_NAME", "logo.svg")
+EXTERN_DOMAIN = os.getenv("EXTERN_DOMAIN", "false").lower() in ("true", "1", "yes")
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("coming-soon.html", TOOL_NAME=TOOL_NAME, DEADLINE=DEADLINE, LOGO_NAME=LOGO_NAME)
+    return render_template("coming-soon.html", TOOL_NAME=TOOL_NAME, DEADLINE=DEADLINE, LOGO_NAME=LOGO_NAME, EXTERN_DOMAIN=EXTERN_DOMAIN)
 
 @app.errorhandler(404)
 def page_not_found(e):

@@ -28,3 +28,4 @@ coming-soon provides the following environment variables
   * `MUG.svg` - MedUniGraz logo
   * `TU_Graz.png` - TU Graz logo
   * `vedmeduni.png` - VedMedUni logo
+* **EXTERN_DOMAIN** - `true/false` show footer hosted by.
