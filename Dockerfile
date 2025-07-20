@@ -1,17 +1,20 @@
-# set base image (host OS)
-FROM python:3.8
+# Use a slim, multi-architecture-compatible base image
+FROM python:3.8-slim
 
-# set the working directory in the container
+# Set working directory
 WORKDIR /code
 
-# copy the dependencies file to the working directory
+# Install build tools (optional, useful for native dependencies)
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy and install dependencies
 COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# install dependencies
-RUN pip install -r requirements.txt
-
-# copy the content of the local src directory to the working directory
+# Copy application code
 COPY src/ .
 
-# command to run on container start
-CMD [ "python", "./main.py" ]
+# Run the app
+CMD ["python", "./main.py"]
