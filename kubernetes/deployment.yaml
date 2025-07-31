@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testing101
+  labels:
+    app: testing101
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testing101
+  template:
+    metadata:
+      labels:
+        app: testing101
+    spec:
+      containers:
+        - name: testing101
+          image: ghcr.io/mb-wali/coming-soon:main
+          ports:
+            - containerPort: 8080
+          env:
+            - name: TOOL_NAME
+              value: "MY New Tool"
+            - name: DEADLINE
+              value: "June 30, 2025"
+            - name: LOGO_NAME
+              value: "logo.svg"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: testing101-service
+spec:
+  selector:
+    app: testing101
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
