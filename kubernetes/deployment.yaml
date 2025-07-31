@@ -21,9 +21,9 @@ spec:
             - containerPort: 8080
           env:
             - name: TOOL_NAME
-              value: "MY New Tool"
+              value: "MY New Tool in kubernetes"
             - name: DEADLINE
-              value: "June 30, 2025"
+              value: "June 30, 2026"
             - name: LOGO_NAME
               value: "logo.svg"
 ---
