@@ -4,6 +4,10 @@ metadata:
   name: testing101
   labels:
     app: testing101
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: coming-soon=ghcr.io/mb-wali/coming-soon
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/update-strategy: main
 spec:
   replicas: 1
   selector:
@@ -39,3 +43,25 @@ spec:
       port: 8080
       targetPort: 8080
   type: ClusterIP
+---
+kind: Ingress
+metadata:
+  name: comingsoon-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # nginx.ingress.kubernetes.io/auth-url: "https://auth.k3s.cyverse.at/oauth2/auth"
+    # nginx.ingress.kubernetes.io/auth-signin: "https://auth.k3s.cyverse.at/oauth2/start?rd=https://$host$request_uri"
+    # nginx.ingress.kubernetes.io/auth-response-headers: "X-Auth-Request-Email,X-Auth-Request-User"
+spec:
+  ingressClassName: nginx  # Add this line to specify the Ingress class
+  rules:
+  - host: comingsoon.k3s.cyverse.at  # This only routes traffic for comingsoon.lb.cyverse.at
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: testing101-service
+            port:
+              number: 8080
