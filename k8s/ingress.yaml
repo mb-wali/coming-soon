@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: comingsoon-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # nginx.ingress.kubernetes.io/auth-url: "https://auth.k3s.cyverse.at/oauth2/auth"
+    # nginx.ingress.kubernetes.io/auth-signin: "https://auth.k3s.cyverse.at/oauth2/start?rd=https://$host$request_uri"
+    # nginx.ingress.kubernetes.io/auth-response-headers: "X-Auth-Request-Email,X-Auth-Request-User"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: comingsoon.k3s.cyverse.at
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: testing101-service
+                port:
+                  number: 8080
