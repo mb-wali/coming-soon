@@ -4,10 +4,6 @@ metadata:
   name: testing101
   labels:
     app: testing101
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: testing101=ghcr.io/mb-wali/coming-soon
-    argocd-image-updater.argoproj.io/write-back-method: git
-    argocd-image-updater.argoproj.io/update-strategy: main
 spec:
   replicas: 1
   selector:
@@ -21,6 +17,7 @@ spec:
       containers:
         - name: testing101
           image: ghcr.io/mb-wali/coming-soon:main
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
