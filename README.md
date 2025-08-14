@@ -43,3 +43,4 @@ The container accepts the following environment variables:
 | `TU_Graz.png`    | TU Graz logo        |
 | `vedmeduni.png`  | VedMedUni logo      |
 | `JKU.png`        | JKU logo            |
+| `k3s-logo.png`   | K3S logo            |
