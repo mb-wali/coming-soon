@@ -26,4 +26,4 @@ spec:
             - name: DEADLINE
               value: "June 30, 2026"
             - name: LOGO_NAME
-              value: "logo.svg"
+              value: "TU_Graz.png"
