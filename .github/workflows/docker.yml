@@ -45,11 +45,11 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      # NEW: Add ARM64-only image
-      - name: Build and push ARM64 image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          platforms: linux/arm64
-          tags: ${{ env.REGISTRY }}/${{ github.repository }}:arm64
+      # # NEW: Add ARM64-only image
+      # - name: Build and push ARM64 image
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: .
+      #     push: true
+      #     platforms: linux/arm64
+      #     tags: ${{ env.REGISTRY }}/${{ github.repository }}:arm64
