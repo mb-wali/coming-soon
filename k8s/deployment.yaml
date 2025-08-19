@@ -22,8 +22,8 @@ spec:
             - containerPort: 8080
           env:
             - name: TOOL_NAME
-              value: "MY New Tool in kubernetes"
+              value: <path:kv/data/comingsoon#TOOL_NAME>
             - name: DEADLINE
-              value: "June 30, 2026"
+              value: <path:kv/data/comingsoon#DEADLINE>
             - name: LOGO_NAME
-              value: "TU_Graz.png"
+              value: <path:kv/data/comingsoon#LOGO_NAME>
