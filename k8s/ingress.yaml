@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: comingsoon.k3s.cyverse.at
+    - host: combined.k3s.cyverse.at
       http:
         paths:
           - path: /
