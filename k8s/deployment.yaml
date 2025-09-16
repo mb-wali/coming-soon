@@ -22,8 +22,8 @@ spec:
             - containerPort: 8080
           env:
             - name: TOOL_NAME
-              value: <path:secrets/test/data/comingsoon#TOOL_NAME>
+              value: <path:secrets/test/comingsoon#TOOL_NAME>
             - name: DEADLINE
-              value: <path:secrets/test/data/comingsoon#DEADLINE>
+              value: <path:secrets/test/comingsoon#DEADLINE>
             - name: LOGO_NAME
-              value: <path:secrets/test/data/comingsoon#LOGO_NAME>
+              value: <path:secrets/test/comingsoon#LOGO_NAME>
