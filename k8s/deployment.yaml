@@ -15,7 +15,8 @@ spec:
         app: testing101
     spec:
       securityContext:
-        # runAsNonRoot: true
+        runAsNonRoot: true
+        runAsUser: 1001
         seccompProfile:
           type: RuntimeDefault
       containers:
