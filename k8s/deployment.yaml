@@ -26,11 +26,11 @@ spec:
             - containerPort: 8080
           env:
             - name: TOOL_NAME
-              value: "<path:kv/data/comingsoon#TOOL_NAME>"
+              value: "<path:secrets/apps/data/comingsoon#TOOL_NAME>"
             - name: DEADLINE
-              value: "<path:kv/data/comingsoon#DEADLINE>"
+              value: "<path:secrets/apps/data/comingsoon#DEADLINE>"
             - name: LOGO_NAME
-              value: "<path:kv/data/comingsoon#LOGO_NAME>"
+              value: "<path:secrets/apps/data/comingsoon#LOGO_NAME>"
           securityContext:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
