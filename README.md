@@ -33,6 +33,7 @@ The container accepts the following environment variables:
 | `DEADLINE`       | Launch deadline date (format: `"Month DD, YYYY"`).                                              | `June 30, 2025` |
 | `LOGO_NAME`      | Filename of the logo to display in the top-right corner.                                        | `logo.svg`      |
 | `EXTERN_DOMAIN`  | `true` or `false` — if `true`, shows a footer with **hosted by** information.                   | `true`          |
+| `PORT`           | Running port  (default: `8080`).                                                                | `5000`          |
 
 ### 🖼 Available Logos
 
